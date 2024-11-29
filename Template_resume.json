@@ -1,0 +1,43 @@
+{
+    "contact_info": {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "linkedin": ""
+    },
+    "professional_summary": "",
+    "professional_experience": [
+      {
+        "company": "",
+        "location": "",
+        "position": "",
+        "duration": "",
+        "platform": "",
+        "responsibilities": [
+          ""
+        ]
+      }
+    ],
+    "education": {
+      "degree": "",
+      "institution": ""
+    },
+    "skills": [
+      ""
+    ],
+    "certifications": [
+      {
+        "name": "",
+        "issuer": ""
+      }
+    ],
+    "awards_and_recognitions": [
+      {
+        "award": "",
+        "reasons": [""]
+      }
+    ],
+    "security_clearance": {
+      "clearance_level": ""
+    }
+  }

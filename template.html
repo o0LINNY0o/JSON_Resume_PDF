@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contact Information -->
+    <div class="section">
+        <p style="text-align: center;"><strong style="font-size: 50pt;">{{contact_info.name}}</strong></p>
+        <p style="text-align: center;">
+            <strong>Email:</strong> <a href="mailto:{{contact_info.email}}">{{contact_info.email}}</a><b> | </b> 
+            <strong>Phone:</strong> {{contact_info.phone}}<b> | </b> 
+            <strong>LinkedIn:</strong> <a href="{{contact_info.linkedin}}" target="_blank">{{contact_info.linkedin}}</a>
+        </p>
+    </div>
+
+    <!-- Divider Bar -->
+    <hr class="rounded">
+
+    <!-- Professional Summary -->
+    <div class="section">
+        <p style="text-align: justify;">{{professional_summary}}</p>
+    </div>
+
+    <!-- Divider Bar -->
+    <hr class="rounded">
+
+    <!-- Professional Experience -->
+    <div class="section">
+        <h1 style="text-align: center;">Professional Experience</h1>
+        {% for experience in professional_experience %}
+            <h3>{{experience.position}} | {{experience.company}} | {{experience.location}}</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="margin: 0;"><strong>Duration:</strong> {{experience.duration}}</p>
+                <p style="margin: 0;"><strong>Platform:</strong> {{experience.platform}}</p>
+            </div>
+            <ul>
+                {% for responsibility in experience.responsibilities %}
+                    <li style="text-align: justify;">{{responsibility}}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h1 style="text-align: center;">Education</h1>
+        <p><strong> {{education.degree}} | </strong> {{education.institution}}</p>
+    </div>
+
+    <!-- Skills -->
+    <!--
+    <div class="section">
+        <h1 style="text-align: center;">Skills</h1>
+        <ul style="column-count: 2; column-gap: 20px; page-break-inside: avoid;">
+          {% for skill in skills %}
+            <li>{{skill}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      -->
+
+<!-- Certifications -->
+<div class="section">
+    <h1 style="text-align: center;">Certifications</h1>
+    <ul>
+        {% for certification in certifications %}
+            <li style="display: flex; justify-content: space-between;">
+                {{certification.name}} | <strong> {{certification.issuer}} </strong>              
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Awards and Recognitions -->
+<div class="section">
+    <h1 style="text-align: center;">Awards &amp; Recognitions</h1>
+    <ul>
+        {% for award in awards_and_recognitions %}
+            <li>
+                <strong>Award:</strong> {{award.award}}<br>
+                <ul>
+                    {% for reason in award.reasons %}
+                        <li>{{reason}}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+    <!-- Security Clearance -->
+    <div class="section">
+        <h1 style="text-align: center;">Security Clearance</h1>
+        <ul>
+            <li>{{security_clearance.clearance_level}}</li>
+        </ul>
+    </div>
+</body>
+</html>
